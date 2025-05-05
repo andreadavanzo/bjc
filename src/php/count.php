@@ -5,7 +5,7 @@
 declare(strict_types=1);
 
 const BJC_DIR = __DIR__;
-const BJC_VERSION = '2025.2';
+const BJC_VERSION = '2025.3';
 
 function bjc_tokens(): array
 {
@@ -49,7 +49,6 @@ function bjc_tokens(): array
     T_UNSET => 'sequence',
     T_UNSET_CAST => 'sequence',
     T_XOR_EQUAL => 'sequence',
-
     T_CASE => 'selection',
     T_DEFAULT => 'selection',
     T_ELSE => 'selection',
@@ -57,7 +56,6 @@ function bjc_tokens(): array
     T_IF => 'selection',
     T_MATCH => 'selection',
     T_SWITCH => 'selection',
-
     T_DO => 'repetition',
     T_FOR => 'repetition',
     T_FOREACH => 'repetition',
@@ -74,10 +72,13 @@ function bjc_count(string $code): array
   ];
 
   foreach (token_get_all($code) as $token) {
-    $token_id = $token[0] ?? '';
-
-    if (isset(bjc_tokens()[$token_id])) {
-      $count[bjc_tokens()[$token_id]]++;
+    if (is_array($token)) {
+      $token_id = $token[0] ?? '';
+      if (isset(bjc_tokens()[$token_id])) {
+        $count[bjc_tokens()[$token_id]]++;
+      }
+    } elseif ($token === '=') {
+      $count['sequence']++;
     }
   }
 
