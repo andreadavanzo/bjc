@@ -1,2 +1,2 @@
 # bopini
-Count Böhm-Jacopini (sequence, selection, iteration) structures for code analysis
+Böhm-Jacopini Counter: Count sequence, selection, iteration structures for code analysis
