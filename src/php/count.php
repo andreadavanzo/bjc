@@ -1,11 +1,13 @@
 <?php
 
-/* The Böhm-Jacopini Counter, Copyright (c) Andrea Davanzo, License MPL v2.0 */
+// BJC The Böhm-Jacopini Counter - https://github.com/andreadavanzo/bjc
+// SPDX-License-Identifier: AGPL-3.0-only
+// Copyright (c) Andrea Davanzo and contributors
 
 declare(strict_types=1);
 
 const BJC_DIR = __DIR__;
-const BJC_VERSION = '2025.5';
+const BJC_VERSION = '2026.1';
 
 function bjc_tokens(): array
 {
