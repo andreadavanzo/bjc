@@ -7,7 +7,7 @@
 declare(strict_types=1);
 
 const BJC_DIR = __DIR__;
-const BJC_VERSION = '2025.5';
+const BJC_VERSION = '2026.1';
 
 function bjc_tokens(): array
 {
